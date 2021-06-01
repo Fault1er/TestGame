@@ -1,0 +1,9 @@
+{
+	"textures" : [
+		{ "id" : "ui_btn", "path" : "textures/ui.png" },
+		{ "id" : "chess_pack", "path" : "textures/chess_pack.png" }
+	],
+	"fonts" : [
+		{ "id" : "arial", "path" : "fonts/arial.ttf" }
+	]
+}

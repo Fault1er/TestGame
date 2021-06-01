@@ -1,0 +1,501 @@
+{
+	"objects" : [
+		{
+			"name" : "field",
+			"children": [
+				{ "name" : "row1", "pos" : { "y" : 448 }, "children" : [
+					{ "name": "1", "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "2", "pos" : { "x" : 64 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "3", "pos" : { "x" : 128 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "4", "pos" : { "x" : 192 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "5", "pos" : { "x" : 256 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "6", "pos" : { "x" : 320 },
+						"children" : [
+							{ "name" : "pawn", "components" : [
+								{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 192, "width" : 64, "height" : 64 } } },
+								{ "id" : "priority", "data" : { "priority" : 10 } }
+							] }
+						],
+						"components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell", "data" : { "pawn" : "white" } }
+					] },
+					{ "name": "7", "pos" : { "x" : 384 },
+						"children" : [
+							{ "name" : "pawn", "components" : [
+								{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 192, "width" : 64, "height" : 64 } } },
+								{ "id" : "priority", "data" : { "priority" : 10 } }
+							] }
+						],
+						"components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell", "data" : { "pawn" : "white" } }
+					] },
+					{ "name": "8", "pos" : { "x" : 448 },
+						"children" : [
+							{ "name" : "pawn", "components" : [
+								{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 192, "width" : 64, "height" : 64 } } },
+								{ "id" : "priority", "data" : { "priority" : 10 } }
+							] }
+						],
+						"components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell", "data" : { "pawn" : "white" } }
+					] }
+				] },
+				{ "name" : "row2", "pos" : { "y" : 384 }, "children" : [
+					{ "name": "1", "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "2", "pos" : { "x" : 64 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "3", "pos" : { "x" : 128 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "4", "pos" : { "x" : 192 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "5", "pos" : { "x" : 256 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "6", "pos" : { "x" : 320 },
+						"children" : [
+							{ "name" : "pawn", "components" : [
+								{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 192, "width" : 64, "height" : 64 } } },
+								{ "id" : "priority", "data" : { "priority" : 10 } }
+							] }
+						],
+						"components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell", "data" : { "pawn" : "white" } }
+					] },
+					{ "name": "7", "pos" : { "x" : 384 },
+						"children" : [
+							{ "name" : "pawn", "components" : [
+								{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 192, "width" : 64, "height" : 64 } } },
+								{ "id" : "priority", "data" : { "priority" : 10 } }
+							] }
+						],
+						"components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell", "data" : { "pawn" : "white" } }
+					] },
+					{ "name": "8", "pos" : { "x" : 448 },
+						"children" : [
+							{ "name" : "pawn", "components" : [
+								{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 192, "width" : 64, "height" : 64 } } },
+								{ "id" : "priority", "data" : { "priority" : 10 } }
+							] }
+						],
+						"components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell", "data" : { "pawn" : "white" } }
+					] }
+				] },
+				{ "name" : "row3", "pos" : { "y" : 320 }, "children" : [
+					{ "name": "1", "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "2", "pos" : { "x" : 64 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "3", "pos" : { "x" : 128 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "4", "pos" : { "x" : 192 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "5", "pos" : { "x" : 256 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "6", "pos" : { "x" : 320 },
+						"children" : [
+							{ "name" : "pawn", "components" : [
+								{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 192, "width" : 64, "height" : 64 } } },
+								{ "id" : "priority", "data" : { "priority" : 10 } }
+							] }
+						],
+						"components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell", "data" : { "pawn" : "white" } }
+					] },
+					{ "name": "7", "pos" : { "x" : 384 },
+						"children" : [
+							{ "name" : "pawn", "components" : [
+								{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 192, "width" : 64, "height" : 64 } } },
+								{ "id" : "priority", "data" : { "priority" : 10 } }
+							] }
+						],
+						"components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell", "data" : { "pawn" : "white" } }
+					] },
+					{ "name": "8", "pos" : { "x" : 448 },
+						"children" : [
+							{ "name" : "pawn", "components" : [
+								{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 192, "width" : 64, "height" : 64 } } },
+								{ "id" : "priority", "data" : { "priority" : 10 } }
+							] }
+						],
+						"components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell", "data" : { "pawn" : "white" } }
+					] }
+				] },
+				{ "name" : "row4", "pos" : { "y" : 256 }, "children" : [
+					{ "name": "1", "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "2", "pos" : { "x" : 64 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "3", "pos" : { "x" : 128 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "4", "pos" : { "x" : 192 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "5", "pos" : { "x" : 256 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "6", "pos" : { "x" : 320 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "7", "pos" : { "x" : 384 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "8", "pos" : { "x" : 448 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] }
+				] },
+				{ "name" : "row5", "pos" : { "y" : 192 }, "children" : [
+					{ "name": "1", "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "2", "pos" : { "x" : 64 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "3", "pos" : { "x" : 128 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "4", "pos" : { "x" : 192 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "5", "pos" : { "x" : 256 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "6", "pos" : { "x" : 320 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "7", "pos" : { "x" : 384 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "8", "pos" : { "x" : 448 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] }
+				] },
+				{ "name" : "row6", "pos" : { "y" : 128 }, "children" : [
+					{ "name": "1",
+						"children" : [
+							{ "name" : "pawn", "components" : [
+								{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 128, "width" : 64, "height" : 64 } } },
+								{ "id" : "priority", "data" : { "priority" : 10 } }
+							] }
+						],
+						"components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell", "data" : { "pawn" : "black" } }
+					] },
+					{ "name": "2", "pos" : { "x" : 64 },
+						"children" : [
+							{ "name" : "pawn", "components" : [
+								{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 128, "width" : 64, "height" : 64 } } },
+								{ "id" : "priority", "data" : { "priority" : 10 } }
+							] }
+						],
+						"components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell", "data" : { "pawn" : "black" } }
+					] },
+					{ "name": "3", "pos" : { "x" : 128 },
+						"children" : [
+							{ "name" : "pawn", "components" : [
+								{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 128, "width" : 64, "height" : 64 } } },
+								{ "id" : "priority", "data" : { "priority" : 10 } }
+							] }
+						],
+						"components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell", "data" : { "pawn" : "black" } }
+					] },
+					{ "name": "4", "pos" : { "x" : 192 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "5", "pos" : { "x" : 256 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "6", "pos" : { "x" : 320 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "7", "pos" : { "x" : 384 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "8", "pos" : { "x" : 448 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] }
+				] },
+				{ "name" : "row7", "pos" : { "y" : 64 }, "children" : [
+					{ "name": "1",
+						"children" : [
+							{ "name" : "pawn", "components" : [
+								{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 128, "width" : 64, "height" : 64 } } },
+								{ "id" : "priority", "data" : { "priority" : 10 } }
+							] }
+						],
+						"components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell", "data" : { "pawn" : "black" } }
+					] },
+					{ "name": "2", "pos" : { "x" : 64 },
+						"children" : [
+							{ "name" : "pawn", "components" : [
+								{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 128, "width" : 64, "height" : 64 } } },
+								{ "id" : "priority", "data" : { "priority" : 10 } }
+							] }
+						],
+						"components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell", "data" : { "pawn" : "black" } }
+					] },
+					{ "name": "3", "pos" : { "x" : 128 },
+						"children" : [
+							{ "name" : "pawn", "components" : [
+								{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 128, "width" : 64, "height" : 64 } } },
+								{ "id" : "priority", "data" : { "priority" : 10 } }
+							] }
+						],
+						"components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell", "data" : { "pawn" : "black" } }
+					] },
+					{ "name": "4", "pos" : { "x" : 192 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "5", "pos" : { "x" : 256 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "6", "pos" : { "x" : 320 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "7", "pos" : { "x" : 384 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "8", "pos" : { "x" : 448 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] }
+					] },
+				{ "name" : "row8", "children" : [
+					{ "name": "1",
+						"children" : [
+							{ "name" : "pawn", "components" : [
+								{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 128, "width" : 64, "height" : 64 } } },
+								{ "id" : "priority", "data" : { "priority" : 10 } }
+							] }
+						],
+						"components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell", "data" : { "pawn" : "black" } }
+					] },
+					{ "name": "2", "pos" : { "x" : 64 },
+						"children" : [
+							{ "name" : "pawn", "components" : [
+								{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 128, "width" : 64, "height" : 64 } } },
+								{ "id" : "priority", "data" : { "priority" : 10 } }
+							] }
+						],
+						"components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell", "data" : { "pawn" : "black" } }
+					] },
+					{ "name": "3", "pos" : { "x" : 128 },
+						"children" : [
+							{ "name" : "pawn", "components" : [
+								{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 128, "width" : 64, "height" : 64 } } },
+								{ "id" : "priority", "data" : { "priority" : 10 } }
+							] }
+						],
+						"components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell", "data" : { "pawn" : "black" } }
+					] },
+					{ "name": "4", "pos" : { "x" : 192 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "5", "pos" : { "x" : 256 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "6", "pos" : { "x" : 320 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "7", "pos" : { "x" : 384 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "x" : 64, "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] },
+					{ "name": "8", "pos" : { "x" : 448 }, "components" : [
+						{ "id" : "sprite", "data" : { "texture" : "chess_pack", "rect" : { "width" : 64, "height" : 64 } } },
+						{ "id" : "click", "data" : { "width" : 64, "height" : 64 } },
+						{ "id" : "cell" }
+					] }
+				] }
+
+			],
+			"components" : [
+				{ "id" : "priority", "data" : { "priority" : 1 } }
+			]
+		},
+		{
+			"name" : "ui", "pos" : { "y" : 222 },
+			"children" : [
+				{ "name" : "black_btn", "pos" : { "x" : 80 },
+					"components" : [
+						{ "id" : "button", "data" : { "width" : 128, "height" : 64, "pressed_tex" : "ui_btn", "p_rect" : { "y" : 64, "width" : 128, "height" : 64 }, "released_tex" : "ui_btn", "r_rect" : { "width" : 128, "height" : 64 } } },
+						{ "id" : "text", "data" : { "source" : "BLACK", "font" : "arial", "pos" : { "x" : 40, "y" : 18 } } }
+					]
+				},
+				{ "name" : "white_btn", "pos" : { "x" : 304 },
+					"components" : [
+						{ "id" : "button", "data" : { "width" : 128, "height" : 64, "pressed_tex" : "ui_btn", "p_rect" : { "y" : 64, "width" : 128, "height" : 64 }, "released_tex" : "ui_btn", "r_rect" : { "width" : 128, "height" : 64 } } },
+						{ "id" : "text", "data" : { "source" : "WHITE", "font" : "arial", "pos" : { "x" : 40, "y" : 18 } } }
+					]
+				}
+			],
+			"components" : [
+				{ "id" : "priority", "data" : { "priority" : 20 } }
+			]
+		},
+		{
+			"name" : "manager",
+			"components" : [
+				{ "id" : "field_manager" }
+			]
+		}
+	]
+}
