@@ -5,6 +5,8 @@
 #include <Utils/JsonHelper.hpp>
 #include <SFML/Graphics/Rect.hpp>
 
+#include <cmath>
+
 
 bool ClickComponent::Contains( const sf::Vector2i& point ) const
 {
@@ -16,7 +18,7 @@ bool ClickComponent::Contains( const sf::Vector2i& point ) const
 		owner = owner->GetParent();
 	}
 
-	sf::IntRect rect{ int( std::round( pos.x ) ), int( std::round( pos.y ) ), width_, height_ };
+	sf::IntRect rect{ sf::Vector2i{ int( std::round( pos.x ) ), int( std::round( pos.y ) ) }, sf::Vector2i{ width_, height_ } };
 
 	return rect.contains( point );
 }

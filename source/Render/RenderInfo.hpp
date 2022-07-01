@@ -1,12 +1,17 @@
 #pragma once
 
 
-#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
 
 
 #include <stack>
 #include <vector>
 
+
+namespace sf
+{
+	class Drawable;
+}
 
 class RenderInfo
 {

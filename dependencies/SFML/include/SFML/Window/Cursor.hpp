@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////
 //
 // SFML - Simple and Fast Multimedia Library
-// Copyright (C) 2007-2021 Laurent Gomila (laurent@sfml-dev.org)
+// Copyright (C) 2007-2022 Laurent Gomila (laurent@sfml-dev.org)
 //
 // This software is provided 'as-is', without any express or implied warranty.
 // In no event will the authors be held liable for any damages arising from the use of this software.
@@ -29,8 +29,8 @@
 // Headers
 ////////////////////////////////////////////////////////////
 #include <SFML/Window/Export.hpp>
-#include <SFML/System/NonCopyable.hpp>
 #include <SFML/System/Vector2.hpp>
+#include <memory>
 
 namespace sf
 {
@@ -43,7 +43,7 @@ namespace priv
 /// \brief Cursor defines the appearance of a system cursor
 ///
 ////////////////////////////////////////////////////////////
-class SFML_WINDOW_API Cursor : NonCopyable
+class SFML_WINDOW_API Cursor
 {
 public:
 
@@ -131,6 +131,18 @@ public:
     ~Cursor();
 
     ////////////////////////////////////////////////////////////
+    /// \brief Deleted copy constructor
+    ///
+    ////////////////////////////////////////////////////////////
+    Cursor(const Cursor&) = delete;
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Deleted copy assignment
+    ///
+    ////////////////////////////////////////////////////////////
+    Cursor& operator=(const Cursor&) = delete;
+
+    ////////////////////////////////////////////////////////////
     /// \brief Create a cursor with the provided image
     ///
     /// \a pixels must be an array of \a width by \a height pixels
@@ -160,7 +172,7 @@ public:
     ///         false otherwise
     ///
     ////////////////////////////////////////////////////////////
-    bool loadFromPixels(const Uint8* pixels, Vector2u size, Vector2u hotspot);
+    [[nodiscard]] bool loadFromPixels(const Uint8* pixels, Vector2u size, Vector2u hotspot);
 
     ////////////////////////////////////////////////////////////
     /// \brief Create a native system cursor
@@ -176,7 +188,7 @@ public:
     ///         false otherwise
     ///
     ////////////////////////////////////////////////////////////
-    bool loadFromSystem(Type type);
+    [[nodiscard]] bool loadFromSystem(Type type);
 
 private:
 
@@ -198,7 +210,7 @@ private:
     ////////////////////////////////////////////////////////////
     // Member data
     ////////////////////////////////////////////////////////////
-    priv::CursorImpl* m_impl; //!< Platform-specific implementation of the cursor
+    std::unique_ptr<priv::CursorImpl> m_impl; //!< Platform-specific implementation of the cursor
 };
 
 } // namespace sf

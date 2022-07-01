@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////
 //
 // SFML - Simple and Fast Multimedia Library
-// Copyright (C) 2007-2021 Laurent Gomila (laurent@sfml-dev.org)
+// Copyright (C) 2007-2022 Laurent Gomila (laurent@sfml-dev.org)
 //
 // This software is provided 'as-is', without any express or implied warranty.
 // In no event will the authors be held liable for any damages arising from the use of this software.
@@ -32,12 +32,18 @@
 #include <SFML/Graphics/Glyph.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Rect.hpp>
-#include <SFML/System/Vector2.hpp>
-#include <SFML/System/String.hpp>
-#include <map>
+#include <memory>
 #include <string>
+#include <unordered_map>
 #include <vector>
 
+
+#ifdef SFML_SYSTEM_ANDROID
+namespace sf::priv
+{
+class ResourceStream;
+}
+#endif
 
 namespace sf
 {
@@ -79,6 +85,18 @@ public:
     Font(const Font& copy);
 
     ////////////////////////////////////////////////////////////
+    /// \brief Move constructor
+    ///
+    ////////////////////////////////////////////////////////////
+    Font(Font&&) noexcept;
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Move assignment
+    ///
+    ////////////////////////////////////////////////////////////
+    Font& operator=(Font&&) noexcept;
+
+    ////////////////////////////////////////////////////////////
     /// \brief Destructor
     ///
     /// Cleans up all the internal resources used by the font
@@ -106,7 +124,7 @@ public:
     /// \see loadFromMemory, loadFromStream
     ///
     ////////////////////////////////////////////////////////////
-    bool loadFromFile(const std::string& filename);
+    [[nodiscard]] bool loadFromFile(const std::filesystem::path& filename);
 
     ////////////////////////////////////////////////////////////
     /// \brief Load the font from a file in memory
@@ -127,7 +145,7 @@ public:
     /// \see loadFromFile, loadFromStream
     ///
     ////////////////////////////////////////////////////////////
-    bool loadFromMemory(const void* data, std::size_t sizeInBytes);
+    [[nodiscard]] bool loadFromMemory(const void* data, std::size_t sizeInBytes);
 
     ////////////////////////////////////////////////////////////
     /// \brief Load the font from a custom stream
@@ -149,7 +167,7 @@ public:
     /// \see loadFromFile, loadFromMemory
     ///
     ////////////////////////////////////////////////////////////
-    bool loadFromStream(InputStream& stream);
+    [[nodiscard]] bool loadFromStream(InputStream& stream);
 
     ////////////////////////////////////////////////////////////
     /// \brief Get the font information
@@ -329,7 +347,7 @@ private:
     ////////////////////////////////////////////////////////////
     // Types
     ////////////////////////////////////////////////////////////
-    typedef std::map<Uint64, Glyph> GlyphTable; //!< Table mapping a codepoint to its glyph
+    using GlyphTable = std::unordered_map<Uint64, Glyph>; //!< Table mapping a codepoint to its glyph
 
     ////////////////////////////////////////////////////////////
     /// \brief Structure defining a page of glyphs
@@ -337,7 +355,7 @@ private:
     ////////////////////////////////////////////////////////////
     struct Page
     {
-        Page();
+        explicit Page(bool smooth);
 
         GlyphTable       glyphs;  //!< Table mapping code points to their corresponding glyph
         Texture          texture; //!< Texture containing the pixels of the glyphs
@@ -350,6 +368,16 @@ private:
     ///
     ////////////////////////////////////////////////////////////
     void cleanup();
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Find or create the glyphs page corresponding to the given character size
+    ///
+    /// \param characterSize Reference character size
+    ///
+    /// \return The glyphs page corresponding to \a characterSize
+    ///
+    ////////////////////////////////////////////////////////////
+    Page& loadPage(unsigned int characterSize) const;
 
     ////////////////////////////////////////////////////////////
     /// \brief Load a new glyph and store it in the cache
@@ -367,14 +395,13 @@ private:
     ////////////////////////////////////////////////////////////
     /// \brief Find a suitable rectangle within the texture for a glyph
     ///
-    /// \param page   Page of glyphs to search in
-    /// \param width  Width of the rectangle
-    /// \param height Height of the rectangle
+    /// \param page Page of glyphs to search in
+    /// \param size Width and height of the rectangle
     ///
     /// \return Found rectangle within the texture
     ///
     ////////////////////////////////////////////////////////////
-    IntRect findGlyphRect(Page& page, unsigned int width, unsigned int height) const;
+    IntRect findGlyphRect(Page& page, const Vector2u& size) const;
 
     ////////////////////////////////////////////////////////////
     /// \brief Make sure that the given size is the current one
@@ -384,27 +411,24 @@ private:
     /// \return True on success, false if any error happened
     ///
     ////////////////////////////////////////////////////////////
-    bool setCurrentSize(unsigned int characterSize) const;
+    [[nodiscard]] bool setCurrentSize(unsigned int characterSize) const;
 
     ////////////////////////////////////////////////////////////
     // Types
     ////////////////////////////////////////////////////////////
-    typedef std::map<unsigned int, Page> PageTable; //!< Table mapping a character size to its page (texture)
+    class FontHandles;
+    using PageTable = std::unordered_map<unsigned int, Page>; //!< Table mapping a character size to its page (texture)
 
     ////////////////////////////////////////////////////////////
     // Member data
     ////////////////////////////////////////////////////////////
-    void*                      m_library;     //!< Pointer to the internal library interface (it is typeless to avoid exposing implementation details)
-    void*                      m_face;        //!< Pointer to the internal font face (it is typeless to avoid exposing implementation details)
-    void*                      m_streamRec;   //!< Pointer to the stream rec instance (it is typeless to avoid exposing implementation details)
-    void*                      m_stroker;     //!< Pointer to the stroker (it is typeless to avoid exposing implementation details)
-    int*                       m_refCount;    //!< Reference counter used by implicit sharing
-    bool                       m_isSmooth;    //!< Status of the smooth filter
-    Info                       m_info;        //!< Information about the font
-    mutable PageTable          m_pages;       //!< Table containing the glyphs pages by character size
-    mutable std::vector<Uint8> m_pixelBuffer; //!< Pixel buffer holding a glyph's pixels before being written to the texture
+    std::shared_ptr<FontHandles>          m_fontHandles; //!< Shared information about the internal font instance
+    bool                                  m_isSmooth;    //!< Status of the smooth filter
+    Info                                  m_info;        //!< Information about the font
+    mutable PageTable                     m_pages;       //!< Table containing the glyphs pages by character size
+    mutable std::vector<Uint8>            m_pixelBuffer; //!< Pixel buffer holding a glyph's pixels before being written to the texture
     #ifdef SFML_SYSTEM_ANDROID
-    void*                      m_stream; //!< Asset file streamer (if loaded from file)
+    std::unique_ptr<priv::ResourceStream> m_stream;      //!< Asset file streamer (if loaded from file)
     #endif
 };
 

@@ -1,5 +1,10 @@
-#include <cassert>
 #include "RenderInfo.hpp"
+
+
+#include <SFML/Graphics/Drawable.hpp>
+
+
+#include <cassert>
 
 
 auto RenderInfo::GetStack() -> std::stack<RenderInfo> &

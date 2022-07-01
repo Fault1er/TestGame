@@ -39,7 +39,7 @@ void ResourceManager::LoadResources( const std::string& file_name )
 				if ( !id.empty() && !path.empty() )
 				{
 					auto* tex = new sf::Texture;
-					tex->loadFromFile( path );
+					assert( tex->loadFromFile( path ) );
 					resources_[id] = ResPtr( new TextureResource( tex ) );
 				}
 			}
@@ -60,7 +60,7 @@ void ResourceManager::LoadResources( const std::string& file_name )
 				if ( !id.empty() && !path.empty() )
 				{
 					auto* font = new sf::Font;
-					font->loadFromFile( path );
+					assert( font->loadFromFile( path ) );
 					resources_[id] = ResPtr( new FontResource( font ) );
 				}
 			}

@@ -8,6 +8,7 @@
 #include <unordered_map>
 #include <memory>
 #include <cassert>
+#include <string>
 
 
 class ResourceManager

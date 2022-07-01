@@ -12,7 +12,7 @@
 
 int main()
 {
-    sf::RenderWindow window( sf::VideoMode( 512, 512 ), "TestGame", sf::Style::Close );
+    sf::RenderWindow window( sf::VideoMode( sf::Vector2u{ 512, 512 } ), "TestGame", sf::Style::Close );
 
 	/// Загружаем ресурсы
 	ResourceManager::Instance().LoadResources( "Resources.json" );
